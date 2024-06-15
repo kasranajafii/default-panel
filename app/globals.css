@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Additional styles */
+@import url("/public/css/additional-styles/utility-patterns.css");
+@import url("/public/css/additional-styles/range-slider.css");
+@import url("/public/css/additional-styles/toggle-switch.css");
+@import url("/public/css/additional-styles/flatpickr.css");
+@import url("/public/css/additional-styles/theme.css");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
