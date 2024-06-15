@@ -1,19 +1,13 @@
 "use client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import React from "react";
+import { I18nProviderClient } from "@/locales/client";
+import React, { ReactElement } from "react";
 
-type TLayoutComponent = {
-  children: React.ReactNode;
+type TClientLayoutProps = {
+    locale: "fa" | "en";
+    children: ReactElement;
 };
-
-function LayoutComponent({ children }: TLayoutComponent) {
-  const queryClient = new QueryClient();
-
-  return (
-    <>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </>
-  );
+function ClientLayout({ locale, children }: TClientLayoutProps) {
+    return <I18nProviderClient locale={locale}>{children}</I18nProviderClient>;
 }
 
-export default LayoutComponent;
+export default ClientLayout;
