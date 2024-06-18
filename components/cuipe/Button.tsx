@@ -31,14 +31,14 @@ customClass,
   };
 
   const sizes = {
-    sm:"w-[61px] h-[30px] top-[62px]",
-    md:"w-[69px] h-[38px] top-[58px] start-[73px]",
-    lg:"w-[82px] h-[48px] top-[53px] start-[154px]",
+    sm:"px-[8px] py-[4px] ",
+    md:"px-[12px] py-[8px] ",
+    lg:"px-[16px] py-[12px]",
   };
   return (
    
         <button
-        className={`${variants[variant]} ${sizes[size]} rounded-lg flex flex-row gap-3 justify-center items-center text-center transition-all duration-400 ease-in-out ${customClass}`}
+        className={`${variants[variant]} ${sizes[size]} rounded-lg flex flex-row gap-2 justify-center items-center text-center transition-all duration-400 ease-in-out ${customClass}`}
           onClick={onClick} 
         >
           {preIcon}
