@@ -1,4 +1,11 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+"use client";
+import {
+    ChangeEvent,
+    HTMLInputTypeAttribute,
+    useEffect,
+    useState,
+} from "react";
+import Tooltip from "./Tooltip";
 
 export type Tprops = {
     id?: string;
@@ -10,17 +17,18 @@ export type Tprops = {
     tooltip?: string;
     error?: boolean;
     disabled?: boolean;
-    preIcon?: React.ReactNode;
-    postIcon?: React.ReactNode;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    prefix?: React.ReactNode | string;
+    suffix?: React.ReactNode | string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     supportingText?: string;
+    required?: boolean;
 };
 function Input({
     id,
     name,
     onChange,
-    preIcon,
-    postIcon,
+    prefix,
+    suffix,
     type,
     label,
     value,
@@ -28,47 +36,88 @@ function Input({
     disabled,
     placeholder,
     supportingText,
+    required,
+    tooltip,
 }: Tprops) {
-    const InputVariants = {
-        type: {
-            text: "block text-sm font-medium mb-1 ",
-            number: " block text-sm font-medium mb-1",
-            email: " block text-sm font-medium mb-1",
-            password: "  block text-sm font-medium mb-1",
-        },
-    };
+    const [upperPadding, setUpperPadding] = useState(false);
+
+    useEffect(() => {
+        if (tooltip || label || required) setUpperPadding(true);
+        else setUpperPadding(false);
+    }, [tooltip, label, required]);
 
     return (
         <>
-            <div className="pt-4">
-                <label htmlFor={id}>{label}</label>
-                {postIcon}
+            <div className="pb-5 relative">
+                {upperPadding ? (
+                    <div className="flex justify-between items-center gap-2 mb-1 h-6">
+                        <div className="flex justify-start items-center gap-2">
+                            {label ? (
+                                <label
+                                    htmlFor={id}
+                                    className="text-sm font-medium"
+                                >
+                                    {label}
+                                </label>
+                            ) : null}
+                            {required && (
+                                <div className="block text-sm font-medium text-rose-500">
+                                    *
+                                </div>
+                            )}
+                        </div>
+
+                        {tooltip && (
+                            <Tooltip
+                                className="ml-2 mb-2 "
+                                bg="dark"
+                                size="md"
+                                position="right"
+                            >
+                                <div className="text-sm text-slate-200  ">
+                                    {tooltip}
+                                </div>
+                            </Tooltip>
+                        )}
+                    </div>
+                ) : null}
                 <input
                     id={id}
                     name={name}
                     type={type}
                     placeholder={placeholder}
                     value={value}
+                    required={required}
                     onChange={onChange}
                     disabled={disabled}
-                    className={`form-input 
-                      px-3 py-2 placeholder 
-                        ${preIcon ? "ps-10" : postIcon ? "pe-10" : ""}
+                    className={`relative text-sm text-slate-800 bg-white border rounded leading-5 py-2 px-3 border-slate-200 hover:border-slate-300 focus:border-indigo-300 shadow-sm w-full block font-medium placeholder-slate-400 transition-colors duration-100 h-10
+                        ${prefix ? "ps-10" : ""} ${suffix ? "pe-10" : ""} ${
+                        error ? "border-rose-500" : ""
+                    }
                         `}
                 />
-                {preIcon && (
-                    <div className="absolute inset-0 end-auto flex items-center pointer-events-none">
-                        {preIcon}
+
+                {prefix && (
+                    <div
+                        className={`absolute text-[#94A3B8] inset-3 ${
+                            upperPadding ? "top-12" : "top-5"
+                        } -translate-y-1/2 end-auto flex items-center pointer-events-none w-4 h-4`}
+                    >
+                        {prefix}
                     </div>
                 )}
-                {postIcon && (
-                    <div className="absolute inset-0 start-auto flex items-center pointer-events-none">
-                        {postIcon}
+                {suffix && (
+                    <div
+                        className={`absolute text-[#94A3B8] inset-3 ${
+                            upperPadding ? "top-12" : "top-5"
+                        } -translate-y-1/2 start-auto flex items-center pointer-events-none w-4 h-4`}
+                    >
+                        {suffix}
                     </div>
                 )}
                 {supportingText && (
                     <p
-                        className={`text-xs mt-1 ${
+                        className={`absolute start-0 bottom-0 text-xs mt-1 ${
                             error ? "text-rose-500" : ""
                         }`}
                     >
