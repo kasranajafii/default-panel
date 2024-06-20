@@ -19,7 +19,7 @@ export type Tprops = {
     disabled?: boolean;
     prefix?: React.ReactNode | string;
     suffix?: React.ReactNode | string;
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     supportingText?: string;
     required?: boolean;
 };
