@@ -1,14 +1,18 @@
-import { useState } from "react";
-
 type TSwitchButton = {
     onClick: () => void;
     disabled?: boolean;
-    label?: string;
+    label: string;
     id?: string;
+    status: boolean;
 };
 
-const SwitchButton = ({ onClick, disabled, label, id }: TSwitchButton) => {
-    const [toggle, setToggle] = useState<boolean>();
+const SwitchButton = ({
+    status,
+    onClick,
+    disabled,
+    label,
+    id,
+}: TSwitchButton) => {
     return (
         <>
             <div className="flex gap-2 items-center">
@@ -16,11 +20,9 @@ const SwitchButton = ({ onClick, disabled, label, id }: TSwitchButton) => {
                     {label}
                 </label>
                 <div
-                    onClick={() => {
-                        setToggle((prevState) => !prevState);
-                    }}
+                    onClick={onClick}
                     className={`gap-2  flex items-center justify-end rounded-xl w-11 h-6 pe-[2px]  ${
-                        toggle ? "bg-slate-400" : "bg-indigo-500 "
+                        status ? "bg-slate-400" : "bg-indigo-500 "
                     }${
                         disabled
                             ? "bg-slate-100 border border-slate-300 pointer-events-none"
@@ -29,7 +31,7 @@ const SwitchButton = ({ onClick, disabled, label, id }: TSwitchButton) => {
                 >
                     <button
                         className={`size-5 rounded-xl  transition-all duration-300 ease-in-out  ${
-                            toggle
+                            status
                                 ? "translate-x-full ltr:-translate-x-full"
                                 : ""
                         }  ${
