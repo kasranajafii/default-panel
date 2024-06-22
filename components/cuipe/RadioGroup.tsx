@@ -9,7 +9,10 @@ function RadioGroup({ selectedItem, onClick, list }: TRadioGroup) {
         <>
             <div className=" flex gap-6 ">
                 {list.map((item, index) => (
-                    <div className="flex items-center gap-2" key={index}>
+                    <div
+                        className="flex items-center gap-2 leading-[22px] [&>*]:text-sm font-normal [&>*]:text-[#475569]"
+                        key={index}
+                    >
                         <button
                             onClick={() => onClick(item.value)}
                             className={`rounded-lg size-4 border-2 flex justify-center items-center  ${
@@ -18,7 +21,7 @@ function RadioGroup({ selectedItem, onClick, list }: TRadioGroup) {
                                     : "bg-white"
                             } ${
                                 selectedItem === item.value
-                                    ? "border-indigo-500 bg-indigo-500 border-4"
+                                    ? "border-indigo-500 border-4"
                                     : "border-slate-300"
                             }`}
                         ></button>
