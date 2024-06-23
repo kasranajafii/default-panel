@@ -15,28 +15,30 @@ const SwitchButton = ({
 }: TSwitchButton) => {
     return (
         <>
-            <div className="flex gap-2 items-center">
-                <label htmlFor={id} className="text-sm text-slate-400 ">
+            <div className="flex gap-2 items-center ">
+                <label htmlFor={id} className="text-sm text-slate-400 italic ">
                     {label}
                 </label>
                 <div
                     onClick={onClick}
-                    className={`gap-2  flex items-center justify-end rounded-xl w-11 h-6 pe-[2px]  ${
-                        status ? "bg-slate-400" : "bg-indigo-500 "
-                    }${
+                    className={`gap-2  flex items-center justify-start rounded-xl w-11 h-6 p-[1px] border ${
+                        status
+                            ? "bg-indigo-500 border-indigo-500"
+                            : "bg-slate-400 border-slate-400"
+                    } ${
                         disabled
-                            ? "bg-slate-100 border border-slate-300 pointer-events-none"
+                            ? "!bg-slate-100  !border-slate-200 pointer-events-none "
                             : ""
                     }`}
                 >
                     <button
-                        className={`size-5 rounded-xl  transition-all duration-300 ease-in-out  ${
+                        className={`size-5 rounded-xl  transition-all duration-300 ease-in-out   ${
                             status
-                                ? "translate-x-full ltr:-translate-x-full"
+                                ? "-translate-x-full ltr:translate-x-full"
                                 : ""
                         }  ${
                             disabled
-                                ? "bg-slate-400 border-slate-300 pointer-events-none"
+                                ? "bg-slate-400 border-slate-200 pointer-events-none "
                                 : "bg-white"
                         }`}
                     ></button>
