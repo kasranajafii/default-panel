@@ -27,20 +27,16 @@ const SwitchButton = ({
                             : "bg-slate-400 border-slate-400"
                     } ${
                         disabled
-                            ? "!bg-slate-100  !border-slate-200 pointer-events-none "
+                            ? "!bg-slate-100  !border-slate-200 pointer-events-none"
                             : ""
                     }`}
                 >
                     <button
-                        className={`size-5 rounded-xl  transition-all duration-300 ease-in-out   ${
+                        className={`size-5 rounded-xl  transition-all duration-300 ease-in-out shadow ${
                             status
                                 ? "-translate-x-full ltr:translate-x-full"
                                 : ""
-                        }  ${
-                            disabled
-                                ? "bg-slate-400 border-slate-200 pointer-events-none "
-                                : "bg-white"
-                        }`}
+                        }  ${disabled ? "bg-slate-400 " : "bg-white"}`}
                     ></button>
                 </div>
             </div>
