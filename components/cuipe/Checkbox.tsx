@@ -20,7 +20,7 @@ const Checkbox = ({ checked, onClick, disabled, children }: TCheckbox) => {
                 } ${
                     disabled
                         ? "bg-slate-50 border-slate-300 pointer-events-none"
-                        : "bg-white"
+                        : ""
                 }`}
             >
                 {checked && (
