@@ -10,10 +10,12 @@ type Tprops = {
     | "danger"
     | "danger-outline"
     | "success"
-    | "success-outline";
+    | "success-outline"
+    | "tertiary-text";
   customClass?: string;
   size?: "sm" | "md" | "lg";
-  icon?: React.ReactNode;
+  Preicon?: React.ReactNode;
+  Posticon?: React.ReactNode;
   loading?: boolean;
   disabled?: boolean;
 };
@@ -21,7 +23,8 @@ function Button({
   onClick,
   children,
   variant,
-  icon,
+  Preicon,
+  Posticon,
   size = "md",
   customClass,
   loading,
@@ -31,6 +34,8 @@ function Button({
     primary: "bg-indigo-500 hover:bg-indigo-600 text-white",
     secondary: "border-slate-200 hover:border-slate-300 text-indigo-500",
     tertiary: "border-slate-200 hover:border-slate-300 text-slate-600",
+    "tertiary-text":
+      "border-0 border-b border-slate-600 rounded-none text-slate-600",
     danger: "bg-rose-500 hover:bg-rose-600 text-white",
     "danger-outline": "border-slate-200 hover:border-slate-300 text-rose-500",
     success: "bg-emerald-500 hover:bg-emerald-600 text-white",
@@ -47,7 +52,7 @@ function Button({
   return (
     <button
       className={`${variants[variant]} ${sizes[size]} ${
-        icon && !children ? "size-9" : "p-[10px]"
+        Preicon && !children ? "size-9" : "p-[10px]"
       } font-medium rounded-[4px] flex gap-2 justify-center items-center text-center transition-all duration-400 ease-in-out border disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed disabled:shadow-none shadow-sm ${customClass}`}
       onClick={onClick}
       disabled={disabled || loading}
@@ -61,8 +66,10 @@ function Button({
         </>
       ) : (
         <>
-          <span className="size-4 fill-current">{icon}</span>
+          {" "}
+          {Preicon && <span className="size-4 fill-current">{Preicon}</span>}
           {children}
+          {Posticon && <span className="size-4 fill-current">{Posticon}</span>}
         </>
       )}
     </button>
