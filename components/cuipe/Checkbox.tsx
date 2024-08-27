@@ -16,11 +16,11 @@ const Checkbox = ({ checked, onClick, disabled, children }: TCheckbox) => {
                 className={`rounded size-4 border-2 flex justify-center items-center ${
                     checked
                         ? "border-indigo-500 bg-indigo-500"
-                        : "border-slate-300"
+                        : "border-slate-300 bg-white"
                 } ${
                     disabled
                         ? "bg-slate-50 border-slate-300 pointer-events-none"
-                        : "bg-white"
+                        : ""
                 }`}
             >
                 {checked && (

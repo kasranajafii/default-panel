@@ -10,7 +10,9 @@ const CategoryComponent = () => {
             subTitle:
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
+
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -20,6 +22,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 69.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
 
@@ -30,6 +33,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
 
@@ -40,6 +44,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 69.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -49,6 +54,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -58,6 +64,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -67,6 +74,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 69.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -76,6 +84,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 69.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -85,6 +94,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -94,6 +104,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -103,6 +114,7 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
 
@@ -113,16 +125,18 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
 
         {
             id: 13,
-            title: "Form Builder CP",
+            title: "x",
             subTitle:
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
@@ -132,15 +146,107 @@ const CategoryComponent = () => {
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
             route: "/",
         },
         {
             id: 15,
-            title: "Form Builder CP",
+            title: "kasra",
             subTitle:
                 "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
             price: 39.0,
             image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 16,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 15,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 17,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 18,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 19,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 20,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 21,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 22,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
+            route: "/",
+        },
+        {
+            id: 24,
+            title: "kasra",
+            subTitle:
+                "Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod.",
+            price: 39.0,
+            image: Headphones.src,
+            score: 0,
             route: "/",
         },
     ];

@@ -22,6 +22,7 @@ export type Tprops = {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     supportingText?: string;
     required?: boolean;
+    customClass?: string;
 };
 function Input({
     id,
@@ -38,6 +39,7 @@ function Input({
     supportingText,
     required,
     tooltip,
+    customClass,
 }: Tprops) {
     const [upperPadding, setUpperPadding] = useState(false);
 
@@ -48,7 +50,7 @@ function Input({
 
     return (
         <>
-            <div className="pb-5 relative">
+            <div className=" relative">
                 {upperPadding ? (
                     <div className="flex justify-between items-center gap-2 mb-1 h-6">
                         <div className="flex justify-start items-center gap-2">
@@ -90,7 +92,7 @@ function Input({
                     required={required}
                     onChange={onChange}
                     disabled={disabled}
-                    className={`relative text-sm text-slate-800 bg-white border rounded leading-5 py-2 px-3 border-slate-200 hover:border-slate-300 focus:border-indigo-300 shadow-sm w-full block font-medium placeholder-slate-400 transition-colors duration-100 h-10
+                    className={`relative text-sm text-slate-800 bg-white border rounded leading-5 py-2 px-3 border-slate-200 hover:border-slate-300 focus:border-indigo-300 shadow-sm w-full block font-medium placeholder-slate-400 transition-colors duration-100 h-10 ${customClass}
                         ${prefix ? "ps-10" : ""} ${suffix ? "pe-10" : ""} ${
                         error ? "border-rose-500" : ""
                     }
