@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/Transition.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/Transition.tsx", "components/cuipe/SidebarLinkGroup.jsx", "components/cuipe/Sidebar.jsx"],
   "exclude": ["node_modules"]
 }
